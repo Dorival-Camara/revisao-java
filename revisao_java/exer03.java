@@ -8,7 +8,7 @@ public class exer03 {
         System.out.println("Informe um número inteiro para analisa-lo : ");
         int n1 = scanner.nextInt();
 
-        String resultado = (n1 < 0) ? "é negativo" : (n1 == 0 ) ? "é nulo" : "é negativo";
+        String resultado = (n1 < 0) ? "é negativo" : (n1 == 0 ) ? "é nulo" : "é positivo";
 
         if (n1 % 2 == 0){
             System.out.println("Seu número " +resultado+ " e par");
