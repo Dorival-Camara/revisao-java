@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
-public class MaiorMenor {
+public class exer08
+ {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int[] vetor = new int[8];
