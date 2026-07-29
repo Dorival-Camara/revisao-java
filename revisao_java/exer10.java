@@ -8,7 +8,7 @@ public class exer10{
         double soma = 0;
 
         for (int i = 0; i < 7; i++){
-            System.out.println("Informe a temperatura do dia "+(i+1)+" : ");
+            System.out.println("Informe a temperatura do dia "+(i+1)+"° : ");
             temperaturas[i] = scanner.nextDouble();
             soma = soma + temperaturas[i];
         }
