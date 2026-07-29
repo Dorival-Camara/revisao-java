@@ -10,6 +10,7 @@ public class exer06{
 
         while (numero < 1 || numero > 10){
             System.out.println("Esse número é invalido informe novamente!!!");
+            numero = scanner.nextInt();
         }
         System.out.println("Esse número "+numero+" é válido!");
     }
