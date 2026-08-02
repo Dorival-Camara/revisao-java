@@ -39,7 +39,59 @@ public class teatro {
             System.out.println("\n Digite a opção desejada");
             opcao = scanner.nextInt();
 
-            
+            switch (opcao){
+
+                case 1: 
+                if(totalSala >= 3) {
+                    System.out.println("Limite de salas atingido!!");
+                }
+                else{
+                        scanner.nextLine();
+
+                        System.out.println("Digite o nome da slaa: ");
+                        nomeDaSala[totalSala] = scanner.nextLine();
+
+                        System.out.println("Digite o nome do espetáculo: ");
+                        espetaculos[totalSala] = scanner.nextLine();
+
+                        precoInteiro[totalSala] = tabelaPreco[totalSala];
+
+                        System.out.println("Preço da sala : R$ " + precoInteiro[totalSala]);
+
+                        totalSala++;
+                        System.out.println("Sala cadastrada com sucesso!!");
+                    }
+                    break;
+
+                case 2: 
+                    if (totalSala == 0){
+                        System.out.println("Cadastre a sala primeiro!!");
+                    }
+
+                    else{
+                        System.out.println("\nSalas cadastradas: ");
+                        for (int i = 0; i < totalSalas; i++){
+                            System.out.println(i + " - "+ nomeDaSala[i]);
+                        }
+
+                        System.out.println("Escolha a sala : ");
+                        int escolha = scanner.nextInt();
+
+                        if (escolha >= 0 && escolha < totalSala){
+                            salaSelecionada = escolha;
+                            System.out.println("Sala selecionada!!");
+                        }
+                        else{
+                            System.out.println("Sala inválida!!");
+                        }
+                    }
+                    break;
+                 
+                case 3:
+                    if()    
+            }
+
+
         }   while (opcao != 0); 
 
 
