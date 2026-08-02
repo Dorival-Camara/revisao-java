@@ -70,7 +70,7 @@ public class teatro {
 
                     else{
                         System.out.println("\nSalas cadastradas: ");
-                        for (int i = 0; i < totalSalas; i++){
+                        for (int i = 0; i < totalSala; i++){
                             System.out.println(i + " - "+ nomeDaSala[i]);
                         }
 
@@ -88,8 +88,74 @@ public class teatro {
                     break;
                  
                 case 3:
-                    if()    
+                    if (salaSelecionada == -1){
+                        System.out.println("Selecione uma sala primeiro!!");
+                    }    
+                    else{
+                        int livres = 0;
+                        int reservadas = 0;
+                        int ocupadas = 0;
+
+                        System.out.println("\nSala : " + nomeDaSala[salaSelecionada]);
+                        System.out.println("Espetáculo : "+ espetaculos[salaSelecionada]);
+                        System.out.println("Inteira : " + precoInteiro[salaSelecionada] + " | Meia: R$ " + (precoInteiro[salaSelecionada] / 2));
+
+                        System.out.println("   1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20");
+
+                        for (int i = 0; i< 20; i++){
+                            System.out.println(letras[i] + " ");
+
+                            for (int c = 0; c < 20; c++){
+                                char estado = cadeiras[salaSelecionada][i][c];
+
+                                if (estado == 'L') {
+                                    System.out.println("[ ]");
+                                    livres++;
+                                }
+                                else if (estado == 'R') {
+                                    System.out.println("[R]");
+                                    reservadas++;
+                                }
+                                else{
+                                    System.out.println("[X]");
+                                    ocupadas++;
+                                }
+                            }
+                            System.out.println();
+                        }
+                        System.out.println("livres: " + livres + " | Reservadas: " + reservadas + " | Ocupadas: " + ocupadas );
+                    }
+                    break;
+                
+                case 4:
+                    if(salaSelecionada == -1){
+                        System.out.println("Selecione uma sala primeiro!!");
+                    }    
+                    else{
+                        System.out.println("Linha (A - V): ");
+                        char linha = scanner.next().toUpperCase().charAt(0);
+
+                        System.out.println("Coluna (1 - 20)");
+                        int coluna = scanner.nextInt();
+
+                        int l = linha - 'A';
+                        int c = coluna - '1';
+
+                        if(l < 0 || 1 >= 12 || c < 0 || c >= 12){
+                            System.out.println("Posição inválida!!");
+                        }
+                        else{
+                            if(cadeiras[salaSelecionada][l][c] == 'L') { 
+                                cadeiras[salaSelecionada][l][c] = 'R';
+                                double valor = precoInteiro[salaSelecionada] / 2;
+                                System.out.println("Reservado! Valor: R$ " + valor);
+                        }
+                        else{
+                            System.out.println("Assento indisponível!!");
+                        }
+                    }
             }
+            break;
 
 
         }   while (opcao != 0); 
